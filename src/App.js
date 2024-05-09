@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Quiz from "./components/Quiz";
+import Login from "./components/Login";
+import "./app.css";
 
 function App() {
+  const [username, setUsername] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="w-full">
+      <div className="header">
+        <span>Quiz App</span>
+        {isLoggedIn && <div>{username}</div>}
+      </div>
+
+      <div className="wrapper">
+        <div className="quiz-container">
+          {!isLoggedIn ? (
+            <Login
+              username={username}
+              setUsername={setUsername}
+              setIsLoggedIn={setIsLoggedIn}
+            />
+          ) : (
+            <Quiz isLoggedIn />
+          )}
+        </div>
+      </div>
     </div>
   );
 }
