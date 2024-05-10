@@ -69,7 +69,7 @@ const Quiz = ({ isLoggedIn }) => {
 
   const renderQuestions = () => {
     return (
-      <div>
+      <>
         {questions.length > 0 ? (
           <div>
             <div className="question-header">
@@ -114,33 +114,35 @@ const Quiz = ({ isLoggedIn }) => {
         ) : (
           <p>Loading...</p>
         )}
-      </div>
+      </>
     );
   };
 
   const renderResult = () => {
     return (
-      <div>
+      <>
         <h2>Results</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>No.</th>
-              <th>Question</th>
-              <th>Selected Option</th>
-            </tr>
-          </thead>
-          <tbody>
-            {questions.map((question, index) => (
-              <tr key={question.id}>
-                <td>{index + 1}</td>
-                <td>{question.question}</td>
-                <td>{selectedOptions[index]}</td>
+        <div className="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>Question</th>
+                <th>Selected Option</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {questions.map((question, index) => (
+                <tr key={question.id}>
+                  <td>{index + 1}</td>
+                  <td>{question.question}</td>
+                  <td>{selectedOptions[index]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </>
     );
   };
 
