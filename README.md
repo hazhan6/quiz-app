@@ -2,7 +2,7 @@
 
 This React project enables users to answer test questions according to specific conditions. Each question is allocated a certain amount of time, during which users can select their answers. The project ensures that users cannot revisit past questions and automatically proceeds to the next question when the time limit is reached. At the end of the test, the user's answers to all questions are displayed.
 
-[For Demo](hazhan6.github.io/quiz-app/)
+[For Demo](https://hazhan6.github.io/quiz-app/)
 
 ## Installation
 
